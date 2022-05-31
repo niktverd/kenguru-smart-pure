@@ -1,3 +1,3 @@
-import TickersKenguru from "../../components/views/TickersKenguru";
+import TickersKenguru from "../../src/components/views/TickersKenguru";
 
 export default TickersKenguru;

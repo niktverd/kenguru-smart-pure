@@ -12,8 +12,8 @@ export const WideLayoutKenguru = (props: Props): React.ReactElement => {
 
     return (
         <>
-            <Grid container>
-                <Grid item xs={2}>
+            <Grid container style={{minWidth: 900, height: '100vh'}}>
+                <Grid item xs={2} style={{backgroundColor: 'lightgray', padding: 10}}>
                     <div>
                         <Link href="/">Home</Link>
                     </div>
@@ -36,7 +36,7 @@ export const WideLayoutKenguru = (props: Props): React.ReactElement => {
                         <Link to="/user/123">User - 123</Link>
                     </div> */}
                 </Grid>
-                <Grid item xs={10}>
+                <Grid item xs={10} style={{padding: 10}}>
                     {children}
                 </Grid>
             </Grid>

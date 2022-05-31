@@ -1,3 +1,3 @@
-import KanbanKenguru from "../components/views/KanbanKenguru";
+import KanbanKenguru from "../src/components/views/KanbanKenguru";
 
 export default KanbanKenguru;

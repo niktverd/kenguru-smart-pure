@@ -56,7 +56,12 @@ const UserKenguru: NextPage = (props) => {
     useState(null);
 
     useEffect(async () => {
-        const foundUser = await fetch('/api/getUserById');
+        const foundUser = await fetch('/api/getUserById', {
+            method: 'POST',
+            body: JSON.stringify({
+                _id: id
+            })
+        });
         const foundUserJson = await foundUser.json();
 
         setUser(foundUserJson);

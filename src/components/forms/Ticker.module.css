@@ -1,0 +1,30 @@
+.fullScreen {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(111, 111, 111, 0.8);
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.formContainer {
+    background-color: white;
+    height: 100vh;
+    min-width: 920px;
+    align-content: flex-start;
+    padding: 20px;
+}
+
+.bold {
+    background-color: lightcyan;
+    padding: 5px;
+}
+
+.formRow {
+    padding: 20px 0px 20px 0px;
+}
+
+.half {
+    padding-right: 10px;
+}

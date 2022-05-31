@@ -1,3 +1,3 @@
-import UsersKenguru from "../../components/views/UsersKenguru";
+import UsersKenguru from "../../src/components/views/UsersKenguru";
 
 export default UsersKenguru;

@@ -1,25 +1,42 @@
-import type { NextPage } from 'next'
-// import styles from '../styles/Home.module.css'
-import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid';
+import { useQuery, gql } from "@apollo/client";
+import { initializeApollo } from "src/graphql/apollo";
 
-const rows: GridRowsProp = [
-  { id: 1, col1: 'Hello', col2: 'World' },
-  { id: 2, col1: 'DataGridPro', col2: 'is Awesome' },
-  { id: 3, col1: 'MUI', col2: 'is Amazing' },
-];
+const MyQuery = gql`
+  query MyQuery {
+    name
+    users {
+      name
+    }
+    tickers {
+      ticker
+      exchange
+      lastPrice
+    }
+  }
+`;
 
-const columns: GridColDef[] = [
-  { field: 'col1', headerName: 'Column 1', width: 150, sortable: true },
-  { field: 'col2', headerName: 'Column 2', width: 150 },
-];
+export default function Home() {
+  const { data, loading } = useQuery(MyQuery);
 
-const Home: NextPage = () => {
+  if (loading) return <span>loading...</span>;
+
   return (
-    <div style={{ height: 300, width: '100%' }}> 
-      <DataGrid rows={rows} columns={columns}  />
-    </div>// <div className={styles.container}>
-    // </div>
-  )
+    <div>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
+    </div>
+  );
 }
 
-export default Home;
+export async function getStaticProps() {
+  const apolloClient = initializeApollo();
+
+  await apolloClient.query({
+    query: MyQuery,
+  });
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract(),
+    },
+  };
+}
