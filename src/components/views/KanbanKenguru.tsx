@@ -1,6 +1,6 @@
 // Доска для работы с тикерами
 import type { NextPage } from 'next'
-import googleFinance from 'google-finance'
+// import googleFinance from 'google-finance'
 import { WideLayoutKenguru } from '../layouts/WideLayoutKenguru';
 
 // type Props = {
@@ -8,11 +8,11 @@ import { WideLayoutKenguru } from '../layouts/WideLayoutKenguru';
 // };
 
 const KanbanKenguru: NextPage = () => {
-    googleFinance.companyNews({
-        symbol: 'NASDAQ:AAPL'
-      }, function (err, news) {
-        console.log(news);
-      });
+    // googleFinance.companyNews({
+    //     symbol: 'NASDAQ:AAPL'
+    //   }, function (err, news) {
+    //     console.log(news);
+    //   });
     return (
         <WideLayoutKenguru>
             <div>Канбан</div>

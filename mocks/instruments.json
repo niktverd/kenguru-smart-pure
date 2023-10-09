@@ -1,0 +1,7 @@
+[
+    {"id": 1, "name": "first", "globalCategory": "A", "userCategory": "B", "globalDirection": "up", "userDirection": "down"},
+    {"id": 2, "name": "second", "globalCategory": "B", "userCategory": "C", "globalDirection": "up", "userDirection": "up"},
+    {"id": 3, "name": "third", "globalCategory": "A", "userCategory": "A", "globalDirection": "down", "userDirection": "down"},
+    {"id": 4, "name": "fourth", "globalCategory": "A", "userCategory": "B", "globalDirection": "down", "userDirection": "down"},
+    {"id": 5, "name": "fifth", "globalCategory": "C", "userCategory": "A", "globalDirection": "up", "userDirection": "up"}
+]

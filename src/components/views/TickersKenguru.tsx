@@ -5,7 +5,7 @@ import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid';
 import { useEffect, useState } from 'react';
 import { useQuery, gql } from '@apollo/client';
 import { initializeApollo } from 'src/graphql/apollo';
-import { AddTickerForm } from '../forms/Ticker';
+// import { AddTickerForm } from '../forms/Ticker';
 
 const MyQuery = gql`
     query MyQuery {
@@ -62,15 +62,15 @@ const TickersKenguru: NextPage = () => {
 
     const { tickers } = data;
     
-    const ticks = tickers.map(ticker=>({
+    const ticks = tickers.map((ticker: any )=> ({
         ...ticker,
         id: ticker._id
     }));
 
-    const onRowClick = (data) => {
+    const onRowClick = (data: any) => {
         console.log(data.id)
     }
-    const onCellClick = (data) => {
+    const onCellClick = (data: any) => {
         if (data.field === '_id'){
             alert(data.id);
         }
@@ -84,7 +84,7 @@ const TickersKenguru: NextPage = () => {
                 <div style={{ height: 600, width: '100%' }}> 
                     <DataGrid rows={ticks} columns={columns} onRowClick={onRowClick} onCellClick={onCellClick}/>
                 </div>
-                <AddTickerForm />
+                {/* <AddTickerForm /> */}
             </>
         </WideLayoutKenguru>
     );
